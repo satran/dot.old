@@ -6,7 +6,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="gallois"
+# ZSH_THEME="gallois"
+ZSH_THEME="terminalparty"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -30,16 +31,20 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 
-PROMPT='%{$fg[cyan]%}%c|%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
+RPS1='%{$fg[cyan]%}%c $(git_prompt_info) %{$fg_bold[blue]%}%!%{$reset_color%}'
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey ';;' vi-cmd-mode
 bindkey '\e.' insert-last-word
+
+alias gly='cd /Users/satyajit/Workspace/mquotient/glyfix-unstable'
+alias o='open .'
