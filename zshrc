@@ -36,15 +36,19 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+export PATH=/usr/local/go/bin:~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 
-PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
+# PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
+PROMPT='%{$fg[green]%}%# '
 RPS1='%{$fg[cyan]%}%c $(git_prompt_info) %{$fg_bold[blue]%}%!%{$reset_color%}'
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-bindkey ';;' vi-cmd-mode
+bindkey 'jk' vi-cmd-mode
 bindkey '\e.' insert-last-word
 
 alias gly='cd /Users/satyajit/Workspace/mquotient/glyfix-unstable'
 alias o='open .'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias ts="tmux -u new-session -s"
+alias tmux="tmux -u"
