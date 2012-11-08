@@ -52,3 +52,6 @@ alias o='open .'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
+
+# Disable auto corrections
+unsetopt correct_all
