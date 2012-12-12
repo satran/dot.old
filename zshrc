@@ -50,8 +50,16 @@ bindkey '\e.' insert-last-word
 alias gly='cd /Users/satyajit/Workspace/mquotient/glyfix-unstable'
 alias o='open .'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias v='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
 
+alias stag="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@boxcite.com"
+alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.com"
+
 # Disable auto corrections
 unsetopt correct_all
+
+# Homebrew completion
+fpath=($HOME/.zsh/func $fpath)
+typeset -U fpath
