@@ -47,7 +47,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey 'jk' vi-cmd-mode
 bindkey '\e.' insert-last-word
 
-alias gly='cd /Users/satyajit/Workspace/mquotient/glyfix-unstable'
+alias gly='cd /Users/satyajit/Workspace/mquotient/code/glyfix'
 alias o='open .'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias v='/Applications/MacVim.app/Contents/MacOS/Vim'
@@ -55,7 +55,10 @@ alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
 
 alias stag="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@boxcite.com"
-alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.com"
+alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.net"
+
+alias actgly='source /Users/satyajit/Workspace/mquotient/ENV/bin/activate'
+alias review='vim /Users/satyajit/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
 
 # Disable auto corrections
 unsetopt correct_all
@@ -63,3 +66,6 @@ unsetopt correct_all
 # Homebrew completion
 fpath=($HOME/.zsh/func $fpath)
 typeset -U fpath
+
+# Shortcut for ps and grep
+function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto;}
