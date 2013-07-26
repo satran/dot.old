@@ -40,11 +40,12 @@ export PATH=/usr/local/go/bin:~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bi
 
 # PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
 PROMPT='%{$fg[green]%}%# '
-RPS1='%{$fg[cyan]%}%c $(git_prompt_info) %{$fg_bold[blue]%}%!%{$reset_color%}'
+RPS1='%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}'
 
-bindkey -v
+# Vim bindings.
+# bindkey -v
+# bindkey 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
-bindkey 'jk' vi-cmd-mode
 bindkey '\e.' insert-last-word
 
 alias gly='cd /Users/satyajit/Workspace/mquotient/code/glyfix'
@@ -59,6 +60,7 @@ alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.net"
 
 alias actgly='source /Users/satyajit/Workspace/mquotient/ENV/bin/activate'
 alias review='vim /Users/satyajit/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # Disable auto corrections
 unsetopt correct_all
@@ -69,3 +71,7 @@ typeset -U fpath
 
 # Shortcut for ps and grep
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto;}
+
+# Virtualenv wrapper for Python
+export WORKON_HOME=~/local/envs
+source /usr/local/bin/virtualenvwrapper.sh
