@@ -1,0 +1,11 @@
+# Default account
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+# MQuotient account
+Host github.com-mq
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/mq_rsa
