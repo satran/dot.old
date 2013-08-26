@@ -47,20 +47,22 @@ RPS1='%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}'
 # bindkey 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
 bindkey '\e.' insert-last-word
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
-alias gly='cd /Users/satyajit/Workspace/mquotient/code/glyfix'
-alias o='open .'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias v='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias e='emacs -nw'
+alias emacs='emacs -nw'
+alias gly='cd ~/Workspace/mquotient/code/glyfix'
+#alias mq='cd ~/Workspace/mquotient/code/'
+alias o='nautilus . &'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
 
 alias stag="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@boxcite.com"
 alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.net"
 
-alias actgly='source /Users/satyajit/Workspace/mquotient/ENV/bin/activate'
-alias review='vim /Users/satyajit/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+alias actgly='source ~/Workspace/mquotient/ENV/bin/activate'
+alias review='vim ~/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
 
 # Disable auto corrections
 unsetopt correct_all
@@ -72,6 +74,19 @@ typeset -U fpath
 # Shortcut for ps and grep
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto;}
 
+# Shortcut for histroy and grep
+function hisgrep() { history | grep -v grep | grep "$@" -i --color=auto;}
+
+# Dont accidently delete something
+function rm() { mv "$@" /home/satyajit/.local/share/Trash/files/; }
+
+# Move to the MQuotient workspace
+function mq() { cd ~/Workspace/mquotient/code/$@;}
+
 # Virtualenv wrapper for Python
 export WORKON_HOME=~/local/envs
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
+
+# Set default editor
+export EDITOR="emacs -nw"
+export VISUAL="emacs -nw"
