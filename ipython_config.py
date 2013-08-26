@@ -173,7 +173,7 @@ c.TerminalInteractiveShell.colors = 'Linux'
 # c.TerminalInteractiveShell.separate_out = ''
 
 # Deprecated, use PromptManager.in_template
-# c.TerminalInteractiveShell.prompt_in1 = 'In [\\#]: '
+# c.TerminalInteractiveShell.prompt_in1 = '\\#>: '
 
 # Enable deep (recursive) reloading by default. IPython can use the deep_reload
 # module which reloads changes in modules recursively (it replaces the reload()
@@ -194,7 +194,7 @@ c.TerminalInteractiveShell.colors = 'Linux'
 # c.TerminalInteractiveShell.screen_length = 0
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
-c.TerminalInteractiveShell.editor = 'vim'
+c.TerminalInteractiveShell.editor = 'emacs -nw'
 
 # Deprecated, use PromptManager.justify
 # c.TerminalInteractiveShell.prompts_pad_left = True
@@ -267,7 +267,7 @@ c.TerminalInteractiveShell.editor = 'vim'
 # c.TerminalInteractiveShell.object_info_string_level = 0
 
 # Deprecated, use PromptManager.out_template
-# c.TerminalInteractiveShell.prompt_out = 'Out[\\#]: '
+# c.TerminalInteractiveShell.prompt_out = '\\# < '
 
 # Set the size of the output cache.  The default is 1000, you can change it
 # permanently in your config file.  Setting it to 0 completely disables the
@@ -291,7 +291,7 @@ c.TerminalInteractiveShell.editor = 'vim'
 # This is the primary interface for producing IPython's prompts.
 
 # Output prompt. '\#' will be transformed to the prompt number
-# c.PromptManager.out_template = 'Out[\\#]: '
+c.PromptManager.out_template = '\\# < '
 
 # Continuation prompt.
 # c.PromptManager.in2_template = '   .\\D.: '
@@ -300,7 +300,7 @@ c.TerminalInteractiveShell.editor = 'vim'
 # c.PromptManager.justify = True
 
 # Input prompt.  '\#' will be transformed to the prompt number
-# c.PromptManager.in_template = 'In [\\#]: '
+c.PromptManager.in_template = '\\# > '
 
 # 
 # c.PromptManager.color_scheme = 'Linux'
