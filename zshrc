@@ -57,6 +57,7 @@ alias gly='cd ~/Workspace/mquotient/code/glyfix'
 alias o='nautilus . &'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
+alias gd="git diff --color"
 
 alias stag="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@boxcite.com"
 alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.net"
