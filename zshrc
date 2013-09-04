@@ -53,16 +53,13 @@ bindkey '^n' history-search-forward
 alias e='emacs -nw'
 alias emacs='emacs -nw'
 alias gly='cd ~/Workspace/mquotient/code/glyfix'
-#alias mq='cd ~/Workspace/mquotient/code/'
-alias o='nautilus . &'
+# For Linux
+# alias o='nautilus .'
+alias o='open .'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
 alias gd="git diff --color"
 
-alias stag="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@boxcite.com"
-alias demo="ssh -i ~/local/keys/glyphfix-aws.pem ubuntu@glyfix.net"
-
-alias actgly='source ~/Workspace/mquotient/ENV/bin/activate'
 alias review='vim ~/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
 
 # Disable auto corrections
@@ -79,15 +76,17 @@ function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto;}
 function hisgrep() { history | grep -v grep | grep "$@" -i --color=auto;}
 
 # Dont accidently delete something
-function rm() { mv "$@" /home/satyajit/.local/share/Trash/files/; }
+# For linux machines.
+# function rm() { mv "$@" ~/.local/share/Trash/files/; }
+function rm() { mv "$@" ~/.Trash; }
 
 # Move to the MQuotient workspace
 function mq() { cd ~/Workspace/mquotient/code/$@;}
 
 # Virtualenv wrapper for Python
 export WORKON_HOME=~/local/envs
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Set default editor
-export EDITOR="emacs -nw"
-export VISUAL="emacs -nw"
+export EDITOR="mvim -f"
+export VISUAL="mvim -f"
