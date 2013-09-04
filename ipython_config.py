@@ -194,7 +194,7 @@ c.TerminalInteractiveShell.colors = 'Linux'
 # c.TerminalInteractiveShell.screen_length = 0
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
-c.TerminalInteractiveShell.editor = 'emacs -nw'
+# c.TerminalInteractiveShell.editor = 'vim'
 
 # Deprecated, use PromptManager.justify
 # c.TerminalInteractiveShell.prompts_pad_left = True
