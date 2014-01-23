@@ -36,7 +36,7 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/go/bin:~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+export PATH=~/.local/bin:~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$PATH
 
 # PROMPT='%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
 PROMPT='%{$fg[green]%}%# '
@@ -50,12 +50,12 @@ bindkey '\e.' insert-last-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-alias e='emacs -nw'
+alias e='emacsclient -c -n'
 alias emacs='emacs -nw'
 alias gly='cd ~/Workspace/mquotient/code/glyfix'
 # For Linux
-# alias o='nautilus .'
-alias o='open .'
+alias o='nautilus .'
+# alias o='open .'
 alias ts="tmux -u new-session -s"
 alias tmux="tmux -u"
 alias gd="git diff --color"
@@ -77,16 +77,12 @@ function hisgrep() { history | grep -v grep | grep "$@" -i --color=auto;}
 
 # Dont accidently delete something
 # For linux machines.
-# function rm() { mv "$@" ~/.local/share/Trash/files/; }
-function rm() { mv "$@" ~/.Trash; }
+function rm() { mv "$@" ~/.local/share/Trash/files/; }
+#function rm() { mv "$@" ~/.Trash; }
 
 # Move to the MQuotient workspace
 function mq() { cd ~/Workspace/mquotient/code/$@;}
 
 # Virtualenv wrapper for Python
 export WORKON_HOME=~/local/envs
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Set default editor
-export EDITOR="mvim -f"
-export VISUAL="mvim -f"
+source /usr/bin/virtualenvwrapper.sh
