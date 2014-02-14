@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="gallois"
 ZSH_THEME="terminalparty"
+# ZSH_THEME="alanpeabody"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -20,7 +21,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -83,6 +84,15 @@ function rm() { mv "$@" ~/.local/share/Trash/files/; }
 # Move to the MQuotient workspace
 function mq() { cd ~/Workspace/mquotient/code/$@;}
 
+export XDG_CONFIG_HOME=~/.local
+export TERM=xterm-256color
+
 # Virtualenv wrapper for Python
-export WORKON_HOME=~/local/envs
+export WORKON_HOME=~/.local/share/pyenvs
 source /usr/bin/virtualenvwrapper.sh
+
+# Keep it simple if running in emacs.
+if [ -n "$INSIDE_EMACS" ]; then
+   PROMPT='%# '
+   RPS1='%c'
+fi
