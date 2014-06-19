@@ -1,34 +1,21 @@
-export PS1="% "
+#
+# ~/.bashrc
+#
 
-# Customize to your needs...
-export PATH=~/.local/bin:~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$PATH
+# If not running interactively, don't do anything
+#[[ $- != *i* ]] && return
 
-# For Linux
-# alias o='nautilus .'
-alias o='open .'
-alias ts="tmux -u new-session -s"
-alias tmux="tmux -u"
-alias gd="git diff --color"
 
-export XDG_CONFIG_HOME=~/.local
-export TERM=dumb
-
-# Virtualenv wrapper for Python
-export WORKON_HOME=~/.local/share/pyenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Keep it simple if running in emacs.
-if [ -n "$INSIDE_EMACS" ]; then
-   PROMPT='%# '
-   RPS1='%c'
-fi
-
+PS1='% '
 PLAN9=/usr/local/plan9 export PLAN9
-PATH=$PATH:$PLAN9/bin export PATH
-export tabstop=8
-
 export GOPATH=$HOME
-export GOROOT=/usr/local/go
-
-export PGPATH=/Applications/Postgres.app/Contents/Versions/9.3/bin
-export PATH=$PATH:$GOROOT/bin:$PGPATH
+GOROOT=/usr/local/go
+PATH=$PATH:$HOME/bin:$GOROOT/bin:$PLAN9/bin export PATH
+alias d='dmenu_run -fn "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*"'
+function rm() { 
+	mv "$@" ~/.local/share/Trash/files/; 
+}
+function cd {
+	builtin cd $1 && awd $sysname 
+}
+export tabstop=8
