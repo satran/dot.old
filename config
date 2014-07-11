@@ -9,3 +9,9 @@ Host github.com-mq
     HostName github.com
     User git
     IdentityFile ~/.ssh/mq_rsa
+
+# MQuotient account
+Host bitbucket.org-mq
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/mq_rsa
