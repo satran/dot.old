@@ -30,7 +30,7 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$PATH
+export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$PATH
 
 PROMPT='%{$fg[green]%}%# '
 RPS1='%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}'
@@ -44,7 +44,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 alias vi='vim'
-alias emacs='emacs -nw'
+alias em='emacs -nw'
 alias gly='cd ~/src/bitbucket.org/mquotient/glyfix'
 # For Linux
 alias o='nautilus .'
@@ -95,3 +95,5 @@ export tabstop=8
 export GOPATH=$HOME
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$PGPATH
+
+export font="/mnt/font/DejaVu Sans Mono/18a/font"
