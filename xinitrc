@@ -31,7 +31,7 @@ $HOME/scripts/set-mouse
 workrave &
 
 # The menu
-#9menu -teleport -popdown -font -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*  Firefox:firefox-nightly Web:dwb Emacs:emacs Vim:gvim Acme:acme-rc Terminal:terminator Nautilus:nautilus Settings:gnome-control-center More:d &
+# 9menu -teleport -popdown -font "-*-terminus-*-*-*-*-28-*-*-*-*-*-*-*" Firefox:firefox Web:dwb Emacs:emacs Acme:acme-rc Terminal:terminator &
 
 #feh --bg-fill /usr/share/backgrounds/gnome/Blinds.jpg
 

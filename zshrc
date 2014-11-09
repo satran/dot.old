@@ -83,9 +83,16 @@ export TERM=xterm-256color
 # source /usr/local/bin/virtualenvwrapper.sh
 
 # Keep it simple if running in emacs.
-if [ -n "$INSIDE_EMACS" ]; then
-   PROMPT='%# '
-   RPS1='%c'
+#if [ -n "$INSIDE_EMACS" ]; then
+#   PROMPT='%# '
+#   RPS1='%c'
+#fi
+
+if [[ $termprog = "9term" || $termprog = "win" ]]; then
+   TERM=dumb
+   PROMPT='%% '
+   RPS1=''
+   PS1='%% '
 fi
 
 PLAN9=/usr/local/plan9 export PLAN9
@@ -97,3 +104,4 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$PGPATH
 
 export font="/mnt/font/DejaVu Sans Mono/18a/font"
+
