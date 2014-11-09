@@ -53,3 +53,7 @@ function hisgrep() {
 	history | grep -v grep | grep "$@" -i --color=auto;
 }
 
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"^p": history-search-backward'
+bind '"^n": history-search-forward'
