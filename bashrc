@@ -30,6 +30,7 @@ export TERM=xterm-256color
 
 if [[ $termprog = "9term" || $termprog = "win" ]]; then
    TERM=dumb
+   PAGER=nobs
    PS1='% '
 fi
 
