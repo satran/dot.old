@@ -26,7 +26,10 @@ $HOME/scripts/set-mouse
 # Take a few breaks
 workrave &
 
-feh --bg-fill $HOME/Pictures/Linux-Mint-14-wallpapers-10.jpg 
+#feh --bg-fill $HOME/Pictures/Linux-Mint-14-wallpapers-10.jpg 
+
+# Start the plumber
+plumber
 
 xset +dpms
 xset dpms 0 0 300
