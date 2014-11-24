@@ -56,5 +56,5 @@ function hisgrep() {
 
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
-bind '"^p": history-search-backward'
-bind '"^n": history-search-forward'
+bind '"\C-P": history-search-backward'
+bind '"\C-N": history-search-forward'
