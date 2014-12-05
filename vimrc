@@ -40,4 +40,5 @@ autocmd!
 autocmd bufwritepost .vimrc source $MYVIMRC
 augroup END
 
-map <leader><space> :nohl<CR> "disable the highlight after a search
+let mapleader = ","
+map <leader><space> :nohl<CR>
