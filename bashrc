@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 #[[ $- != *i* ]] && return
 
+# Change font when on a TTY
+if [ $TERM = linux ]; then
+    setfont ter-924n
+fi
+
 PS1='% '
 
 PLAN9=/usr/local/plan9
@@ -31,8 +36,9 @@ export TERM=xterm-256color
 if [[ $termprog = "9term" || $termprog = "win" ]]; then
    TERM=dumb
    PAGER=nobs
-   PS1='% '
 fi
+
+PS1='\!\$ '
 
 # Dont accidently delete something
 # For linux machines.
