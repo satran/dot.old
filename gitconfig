@@ -1,3 +1,5 @@
 [user]
 	name = Satyajit Ranjeev
 	email = satyajit.ranjeev@gmail.com
+[core]
+	pager = cat
