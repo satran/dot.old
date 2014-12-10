@@ -7,7 +7,7 @@
 
 # Change font when on a TTY
 if [ $TERM = linux ]; then
-    setfont ter-924n
+    setfont ter-914n
 fi
 
 PS1='% '
@@ -26,7 +26,7 @@ export devdrawretina=1
 if [[ `uname` = "Darwin" ]]; then
 	export font="/mnt/font/Menlo-Regular/24a/font"
 else
-	export font="/mnt/font/DejaVu Sans Mono/18a/font"
+	export font='/mnt/font/Terminus (TTF)/12/font'
 fi
 
 export XDG_CONFIG_HOME=~/.local
@@ -38,7 +38,7 @@ if [[ $termprog = "9term" || $termprog = "win" ]]; then
    PAGER=nobs
 fi
 
-PS1='\!\$ '
+PS1='\! % '
 
 # Dont accidently delete something
 # For linux machines.
