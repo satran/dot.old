@@ -1,18 +1,18 @@
 # Mac launch application key to launch dmenu
-"dmenu_run -fn Sans-18"
+"dmenu_run -fn Sans-10"
     m:0x0 + c:212
     XF86LaunchB
     
 # Decrease brightness
-"bright m"
+"bright +"
     m:0x0 + c:232
     XF86MonBrightnessDown
 
 # Increase brightness
-"bright p"
+"bright -"
     m:0x0 + c:233
     XF86MonBrightnessUp
 
-"/home/satran/scripts/acme.rc /home/satran/scratch"
+"gvim"
     m:0x0 + c:128
     XF86LaunchA
