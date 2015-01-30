@@ -1,5 +1,14 @@
 [user]
 	name = Satyajit Ranjeev
-	email = satyajit.ranjeev@gmail.com
+	email = s@ranjeev.in
 [core]
 	pager = cat
+[http]
+	cookiefile = /home/satran/.gitcookies
+
+[alias]
+	change = review change
+	gofmt = review gofmt
+	mail = review mail
+	pending = review pending
+	sync = review sync
