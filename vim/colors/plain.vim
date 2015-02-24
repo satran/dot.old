@@ -16,7 +16,7 @@ hi Visual gui=none guifg=white guibg=#657b83 ctermfg=white ctermbg=241
 hi LineNr guifg=#93a1a1 ctermfg=245
 
 hi CursorColumn  guifg=#000000 guibg=#FDF6E5 ctermfg=240 ctermbg=none
-hi MatchParen   guifg=black guibg=#eee8d5 ctermfg=0  ctermbg=187
+hi MatchParen   guifg=black guibg=#b58900 ctermfg=0  ctermbg=136
 hi Pmenu gui=none guibg=#eee8d5 cterm=none ctermbg=187
 hi PmenuSel guibg=#000000 guifg=white gui=none cterm=none ctermbg=240 ctermfg=white
 hi Directory   guifg=#000000 guibg=#FDF6E5 ctermfg=240 ctermbg=none
