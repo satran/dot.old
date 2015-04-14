@@ -29,11 +29,40 @@ plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$HOME/scripts:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$PATH
-
 PROMPT='%{$fg[green]%}%# '
 RPS1='%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}'
+
+PLAN9=/usr/local/plan9
+export PLAN9
+
+export GOPATH=$HOME
+GOROOT=/usr/local/go
+export GOROOT
+export DOCKER_HOME=$HOME/docker
+export PATH=$PATH:$HOME/scripts:$HOME/bin:$GOROOT/bin:$PLAN9/bin
+
+export XDG_CONFIG_HOME=~/.local
+export TERM=xterm-256color
+
+export tabstop=8
+export devdrawretina=1
+
+if [[ `uname` = "Darwin" ]]; then
+	export font="/mnt/font/Menlo-Regular/24a/font"
+else
+	export font='/mnt/font/Terminus (TTF)/12/font'
+fi
+
+if [[ $termprog = "9term" || $termprog = "win" ]]; then
+   TERM=dumb
+   PROMPT='%% '
+   RPS1=''
+   PS1='%% '
+   PAGER=nobs
+fi
+
+export TERM=xterm-256color
+
 
 # Vim bindings.
 # bindkey -v
@@ -45,21 +74,13 @@ bindkey '^n' history-search-forward
 
 alias vi='vim'
 alias em='emacs -nw'
-alias gly='cd ~/src/bitbucket.org/mquotient/glyfix'
 # For Linux
 alias o='nautilus .'
 # alias o='open .'
 alias gd="git diff --color"
-alias d='dmenu_run -fn "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*"'
-
-alias review='vim ~/Workspace/mquotient/reviews/satyajit/`date +%Y`/daily-review/`date +%m`-`date +%B | tr "[A-Z]" "[a-z]"`.md'
 
 # Disable auto corrections
 unsetopt correct_all
-
-# Homebrew completion
-# fpath=($HOME/.zsh/func $fpath)
-# typeset -U fpath
 
 # Shortcut for ps and grep
 function psgrep() { ps aux | grep -v grep | grep "$@" -i --color=auto;}
@@ -72,36 +93,6 @@ function hisgrep() { history | grep -v grep | grep "$@" -i --color=auto;}
 function rm() { mv "$@" ~/.local/share/Trash/files/; }
 # function rm() { mv "$@" ~/.Trash; }
 
-# Move to the MQuotient workspace
-function mq() { cd ~/src/bitbucket.org/mquotient/$@;}
-
-export XDG_CONFIG_HOME=~/.local
-export TERM=xterm-256color
-
-# Virtualenv wrapper for Python
-# export WORKON_HOME=~/.local/share/pyenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# Keep it simple if running in emacs.
-#if [ -n "$INSIDE_EMACS" ]; then
-#   PROMPT='%# '
-#   RPS1='%c'
-#fi
-
-if [[ $termprog = "9term" || $termprog = "win" ]]; then
-   TERM=dumb
-   PROMPT='%% '
-   RPS1=''
-   PS1='%% '
-fi
-
-PLAN9=/usr/local/plan9 export PLAN9
-PATH=$PATH:$PLAN9/bin export PATH
-export tabstop=8
-
-export GOPATH=$HOME
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin:$PGPATH
-
-export font="/mnt/font/DejaVu Sans Mono/18a/font"
+# Move to the Optiopay workspace
+function op() { cd ~/src/github.com/optiopay/$@; }
 
