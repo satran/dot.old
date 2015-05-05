@@ -13,6 +13,9 @@ fi
 PLAN9=/usr/local/plan9
 export PLAN9
 
+export EDITOR='emacs'
+export VISUAL='emacs'
+
 export GOPATH=$HOME
 GOROOT=/usr/local/go
 export GOROOT
@@ -39,7 +42,7 @@ fi
 
 # GIT branch 
 source /usr/share/git-core/contrib/completion/git-prompt.sh
-PS1='\W$(__git_ps1 " (%s)") % '
+PS1='$(__git_ps1 "(%s)") % '
 export GIT_PS1_SHOWDIRTYSTATE='*'
 
 # Dont accidently delete something
