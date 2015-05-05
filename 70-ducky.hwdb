@@ -1,0 +1,5 @@
+keyboard:usb:v04D9p0125*
+ KEYBOARD_KEY_700e2=leftctrl
+ KEYBOARD_KEY_700e0=leftalt
+ KEYBOARD_KEY_700e4=rightalt
+ KEYBOARD_KEY_700e6=rightctrl
