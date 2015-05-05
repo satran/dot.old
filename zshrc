@@ -32,6 +32,9 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[green]%}%# '
 RPS1='%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}'
 
+export EDITOR='emacs'
+export VISUAL='emacs'
+
 PLAN9=/usr/local/plan9
 export PLAN9
 
@@ -95,4 +98,6 @@ function rm() { mv "$@" ~/.local/share/Trash/files/; }
 
 # Move to the Optiopay workspace
 function op() { cd ~/src/github.com/optiopay/$@; }
+
+if [ -e /home/satran/.nix-profile/etc/profile.d/nix.sh ]; then . /home/satran/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
