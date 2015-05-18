@@ -51,10 +51,6 @@ function rm() {
 	mv "$@" ~/.local/share/Trash/files/; 
 }
 
-function cd {
-	builtin cd "$@" && awd $sysname 
-}
-
 # Shortcut for ps and grep
 function psgrep() {
 	ps aux | grep -v grep | grep "$@" -i --color=auto;
