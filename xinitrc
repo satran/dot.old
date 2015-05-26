@@ -16,5 +16,6 @@ fi
 xset +dpms
 xset dpms 0 0 300
 
-#xbindkeys
+xsetroot -solid "#333333"
+xbindkeys
 exec i3

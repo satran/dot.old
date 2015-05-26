@@ -4,15 +4,19 @@
     XF86LaunchB
     
 # Decrease brightness
-"bright +"
+"bright -"
     m:0x0 + c:232
     XF86MonBrightnessDown
 
 # Increase brightness
-"bright -"
+"bright +"
     m:0x0 + c:233
     XF86MonBrightnessUp
 
-"gvim"
-    m:0x0 + c:128
-    XF86LaunchA
+"amixer set Master 5%-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"amixer set Master 5%+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
