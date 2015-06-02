@@ -5,5 +5,5 @@ keyboard:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*:pvrThinkPadT450s*
  KEYBOARD_KEY_db=leftalt
  KEYBOARD_KEY_b7=rightalt
  KEYBOARD_KEY_1d=leftmeta
- KEYBOARD_KEY_9d=print
+ KEYBOARD_KEY_9d=rightmeta
 
