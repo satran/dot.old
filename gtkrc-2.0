@@ -1,0 +1,4 @@
+# GTK theme
+include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
+gtk-theme-name = default
+gtk-cursor-theme-size = 16
