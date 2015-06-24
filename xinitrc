@@ -15,7 +15,11 @@ fi
 
 xset +dpms
 xset dpms 0 0 300
+xset b off
 
 xsetroot -solid "#333333"
 xbindkeys
-exec i3
+#exec i3
+#exec /usr/bin/ratpoison
+exec stumpwm
+#exec emacs

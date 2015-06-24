@@ -4,12 +4,12 @@
     XF86LaunchB
     
 # Decrease brightness
-"bright -"
+"xbacklight -dec 2"
     m:0x0 + c:232
     XF86MonBrightnessDown
 
 # Increase brightness
-"bright +"
+"xbacklight -inc 2"
     m:0x0 + c:233
     XF86MonBrightnessUp
 
@@ -20,3 +20,7 @@
 "amixer set Master 5%+"
     m:0x0 + c:123
     XF86AudioRaiseVolume
+
+"dmenu_run -fn Sans-14"
+    m:0x0 + c:152
+    XF86Explorer
