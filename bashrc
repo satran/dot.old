@@ -7,7 +7,7 @@
 
 # Change font when on a TTY
 if [ $TERM = linux ]; then
-    setfont ter-924n
+    setfont ter-922n
 fi
 
 PLAN9=/usr/local/plan9
@@ -41,8 +41,8 @@ if [[ $termprog = "9term" || $termprog = "win" ]]; then
 fi
 
 # GIT branch 
-source /usr/share/git-core/contrib/completion/git-prompt.sh
-PS1='$(__git_ps1 "(%s)") % '
+source /usr/share/git/completion/git-prompt.sh
+PS1='$(__git_ps1 "(%s)") \$ '
 export GIT_PS1_SHOWDIRTYSTATE='*'
 
 # Dont accidently delete something
@@ -65,3 +65,26 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\C-P": history-search-backward'
 bind '"\C-N": history-search-forward'
+
+
+alias em='emacs -nw --color=no'
+alias rm~='find . -iname "*~" | xargs rm'
+alias gd='git diff --color'
+alias gst='git status'
+alias gl='git log --oneline | head'
+
+function emd() {
+    if [[ $# -eq 0 ]]; then
+	emacs --color=no --daemon
+    else
+	emacs --color=no --daemon=$1
+    fi
+}
+
+function emc() {
+    if [[ $# -eq 0 ]]; then
+	emacsclient -nw -a ""
+    else
+	emacsclient -nw -s $1
+    fi
+}
