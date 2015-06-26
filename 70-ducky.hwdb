@@ -1,4 +1,4 @@
-keyboard:usb:v04D9p0125*
+evdev:input:b0003v04D9p0125e0111*
  KEYBOARD_KEY_700e2=leftctrl
  KEYBOARD_KEY_700e0=leftalt
  KEYBOARD_KEY_700e4=rightalt
