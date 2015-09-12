@@ -17,7 +17,7 @@ ZSH_THEME="terminalparty"
 DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -38,17 +38,13 @@ export VISUAL='emacs'
 PLAN9=/usr/local/plan9
 export PLAN9
 
-export GOPATH=$HOME
-GOROOT=/usr/local/go
-export GOROOT
+GOPATH=${GOPATH:-$HOME}
+export GOPATH
+export GOROOT=/usr/local/go
 export DOCKER_HOME=$HOME/docker
-export PATH=$PATH:$HOME/scripts:$HOME/bin:$GOROOT/bin:$PLAN9/bin
+export PATH=$PATH:$HOME/bin:$GOROOT/bin:$PLAN9/bin
 
-export XDG_CONFIG_HOME=~/.local
-export TERM=xterm-256color
-
-export tabstop=8
-export devdrawretina=1
+#export TERM=xterm-mono
 
 if [[ `uname` = "Darwin" ]]; then
 	export font="/mnt/font/Menlo-Regular/24a/font"
@@ -64,12 +60,10 @@ if [[ $termprog = "9term" || $termprog = "win" ]]; then
    PAGER=nobs
 fi
 
-export TERM=xterm-256color
-
-
 # Vim bindings.
 # bindkey -v
 # bindkey 'jk' vi-cmd-mode
+
 bindkey '^R' history-incremental-search-backward
 bindkey '\e.' insert-last-word
 bindkey '^p' history-search-backward
@@ -81,6 +75,13 @@ alias em='emacs -nw'
 alias o='nautilus .'
 # alias o='open .'
 alias gd="git diff --color"
+alias em='emacs -nw'
+alias rmt='find . -iname "*~" | xargs rm'
+alias gst='git status'
+alias gl='git log --oneline | head'
+alias emc='emacsclient -nw'
+alias ss='screen -S'
+alias sa='screen -d -r'
 
 # Disable auto corrections
 unsetopt correct_all
@@ -99,5 +100,19 @@ function rm() { mv "$@" ~/.local/share/Trash/files/; }
 # Move to the Optiopay workspace
 function op() { cd ~/src/github.com/optiopay/$@; }
 
-if [ -e /home/satran/.nix-profile/etc/profile.d/nix.sh ]; then . /home/satran/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+function settitle() {
+    printf "\033k$1\033\\"
+}
 
+# Load zsh-syntax-highlighting.
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Load zsh-autosuggestions.
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically.
+zle-line-init() {
+    zle autosuggest-start
+    
+}
+zle -N zle-line-init
