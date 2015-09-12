@@ -15,10 +15,8 @@ export PLAN9
 
 export EDITOR='emacs'
 export VISUAL='emacs'
-
-export GOPATH=$HOME
-GOROOT=/usr/local/go
-export GOROOT
+export GOPATH="${GOPATH:=$HOME}"
+export GOROOT=/usr/local/go
 export DOCKER_HOME=$HOME/docker
 export PATH=$PATH:$HOME/scripts:$HOME/bin:$GOROOT/bin:$PLAN9/bin
 
@@ -28,13 +26,6 @@ export TERM=xterm-256color
 export tabstop=8
 export devdrawretina=1
 
-if [[ `uname` = "Darwin" ]]; then
-	export font="/mnt/font/Menlo-Regular/24a/font"
-else
-	export font='/mnt/font/Terminus (TTF)/12/font'
-fi
-
-
 if [[ $termprog = "9term" || $termprog = "win" ]]; then
    TERM=dumb
    PAGER=nobs
@@ -42,7 +33,7 @@ fi
 
 # GIT branch 
 source /usr/share/git/completion/git-prompt.sh
-PS1='$(__git_ps1 "(%s)") \$ '
+PS1='\W $(__git_ps1 "(%s)")\$ '
 export GIT_PS1_SHOWDIRTYSTATE='*'
 
 # Dont accidently delete something
@@ -68,10 +59,11 @@ bind '"\C-N": history-search-forward'
 
 
 alias em='emacs -nw --color=no'
-alias rm~='find . -iname "*~" | xargs rm'
+alias rmt='find . -iname "*~" | xargs rm'
 alias gd='git diff --color'
 alias gst='git status'
 alias gl='git log --oneline | head'
+alias emc='emacsclient -nw'
 
 function emd() {
     if [[ $# -eq 0 ]]; then
@@ -81,10 +73,4 @@ function emd() {
     fi
 }
 
-function emc() {
-    if [[ $# -eq 0 ]]; then
-	emacsclient -nw -a ""
-    else
-	emacsclient -nw -s $1
-    fi
-}
+
