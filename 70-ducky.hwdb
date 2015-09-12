@@ -2,4 +2,6 @@ evdev:input:b0003v04D9p0125e0111*
  KEYBOARD_KEY_700e2=leftctrl
  KEYBOARD_KEY_700e0=leftalt
  KEYBOARD_KEY_700e4=rightalt
+ KEYBOARD_KEY_70065=rightalt
  KEYBOARD_KEY_700e6=rightctrl
+ KEYBOARD_KEY_70064=leftshift

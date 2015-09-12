@@ -1,5 +1,5 @@
 # Add this to /etc/udev/hwdb.d/90-logitech-t-400.hwdb
 # This sets the middle click of the t400 mouse to be rebound to F20 key.
 # This way you can rebind the F20 key to a middle click later on.
-keyboard:usb:v046DpC52B*
- KEYBOARD_KEY_700e3=f21
+evdev:input:b0003v046Dp4026e0111*
+ KEYBOARD_KEY_700e3=f22
