@@ -12,3 +12,13 @@
 	mail = review mail
 	pending = review pending
 	sync = review sync
+[push]
+	default = matching
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[gui]
+	fontui = -family \"DejaVu Sans\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+[branch "master"]
+	mergeoptions = --no-ff

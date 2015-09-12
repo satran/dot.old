@@ -22,5 +22,15 @@
     XF86AudioRaiseVolume
 
 "dmenu_run -fn Sans-14"
-    m:0x0 + c:152
-    XF86Explorer
+    m:0x0 + c:128
+    XF86LaunchA
+
+"dmenu_run -fn Sans-14"
+    m:0x0 + c:96
+    F12
+	
+
+"xdotool click 2"
+    m:0x0 + c:200
+    F22
+
